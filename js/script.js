@@ -1,4 +1,4 @@
-// Toggling between login and sign up forms
+// toggles between sign up and login
 function toggleForm() {
     var loginForm = document.getElementById('login-form');
     var signupForm = document.getElementById('signup-form');
@@ -12,14 +12,14 @@ function toggleForm() {
     }
 }
 
-// Handle the Sign Up form submission
+// function for sign up submission
 function submitSignUp() {
     // Get the values from the form
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
-    // Basic validation (ensure fields aren't empty)
+    // makes sure fields are not empty
     if (name && email && password) {
         console.log("Name:", name);
         console.log("Email:", email);
