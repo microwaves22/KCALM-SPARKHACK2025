@@ -21,7 +21,18 @@
 
         <div class="saved-lists-container">
             <h2>Saved Lists</h2>
-            <div id="saved-lists"></div>
+
+            <!-- Display Favorites -->
+            <div class="list-container">
+                <h3>Favorites</h3>
+                <div id="favorites-list"></div>
+            </div>
+
+            <!-- Display Bookmarks -->
+            <div class="list-container">
+                <h3>Bookmarks</h3>
+                <div id="bookmarks-list"></div>
+            </div>
 
             <!-- Form to create a new list -->
             <div class="new-list-form">
@@ -32,67 +43,38 @@
 
         <script src="js/script.js"></script>
         <script>
-            // Function to display saved lists from localStorage
+            // Function to display the saved favorites and bookmarks
             function displaySavedLists() {
-                const savedListsContainer = document.getElementById('saved-lists');
-                savedListsContainer.innerHTML = ""; // Clear previous content
-                
-                const savedLists = JSON.parse(localStorage.getItem('savedLists')) || [];
-                
-                if (savedLists.length === 0) {
-                    savedListsContainer.innerHTML = "<p>No saved lists yet!</p>";
-                } else {
-                    savedLists.forEach(list => {
-                        const listElement = document.createElement('div');
-                        listElement.classList.add('saved-list');
-                        
-                        const listName = document.createElement('h3');
-                        listName.textContent = list.listName;
-                        listElement.appendChild(listName);
-                        
-                        const listItems = document.createElement('ul');
-                        list.places.forEach(place => {
-                            const listItem = document.createElement('li');
-                            listItem.textContent = `${place.name} - ${place.location}`;
-                            listItems.appendChild(listItem);
+                // Get the saved favorites and bookmarks from localStorage
+                const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                const bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
+                // Function to display a list of places
+                function displayList(list, listId) {
+                    const container = document.getElementById(listId);
+                    container.innerHTML = ""; // Clear previous content
+
+                    if (list.length === 0) {
+                        container.innerHTML = "<p>No places in this list!</p>";
+                    } else {
+                        list.forEach(place => {
+                            const listItem = document.createElement('div');
+                            listItem.classList.add('place-item');
+                            listItem.innerHTML = `
+                                <h4>${place.NAME}</h4>
+                                <p>${place.ADDRESS}, ${place.CITY}, ${place.STATE} ${place.ZIPCODE}</p>
+                            `;
+                            container.appendChild(listItem);
                         });
-                        listElement.appendChild(listItems);
-                        
-                        savedListsContainer.appendChild(listElement);
-                    });
+                    }
                 }
+
+                // Display favorites
+                displayList(favorites, 'favorites-list');
+
+                // Display bookmarks
+                displayList(bookmarks, 'bookmarks-list');
             }
-
-            // Function to create a new list
-            function createNewList() {
-                const listName = document.getElementById('list-name').value.trim();
-
-                if (listName === "") {
-                    alert("Please enter a list name.");
-                    return;
-                }
-
-                const savedLists = JSON.parse(localStorage.getItem('savedLists')) || [];
-                
-                // Check if the list name already exists
-                if (savedLists.some(list => list.listName === listName)) {
-                    alert("A list with this name already exists.");
-                    return;
-                }
-
-                const newList = {
-                    listName: listName,
-                    places: [] // Initialize with an empty list of places
-                };
-
-                savedLists.push(newList);
-                localStorage.setItem('savedLists', JSON.stringify(savedLists));
-                displaySavedLists();  // Re-render saved lists after adding the new list
-                document.getElementById('list-name').value = ""; // Clear the input field
-            }
-
-            // Event listener for creating a new list
-            document.getElementById('create-list-btn').addEventListener('click', createNewList);
 
             // Call the function to display the lists when the page loads
             document.addEventListener('DOMContentLoaded', displaySavedLists);
