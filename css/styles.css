@@ -1,0 +1,42 @@
+/* background color of homepage */
+body {
+    background-color: #456990;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* navigation bar */
+nav {
+    background-color: #456990;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* height should make it 15% of page */
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+
+/* color of the words */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* homepage icon */
+.nav-icon {
+    height: 35px;
+    vertical-align: middle;
+    align-items: center;
+}
+
+/* KCalm logo icon */
+.KCalm-logo-icon {
+    height: 100%;
+    vertical-align: left;
+}
