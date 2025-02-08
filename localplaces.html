@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Places</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="filter-container">
+        <label for="filter">Filter by Type:</label>
+        <select id="filter" name="filter">
+            <option value="all">All</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="park">Park</option>
+            <option value="shop">Shop</option>
+            <option value="shop">Cosmetics</option>
+        </select>
+    </div>
+
+    <div class="local-places-container">
+        <div class="place restaurant">
+            <img src="path_to_image" alt="Place Image" class="place-image">
+            <h3 class="place-name">Restaurant Name</h3>
+            <p class="place-location">Location</p>
+            <p class="place-description">Description of the place.</p>
+        </div>
+        <div class="place park">
+            <img src="path_to_image" alt="Place Image" class="place-image">
+            <h3 class="place-name">Park Name</h3>
+            <p class="place-location">Location</p>
+            <p class="place-description">Description of the place.</p>
+        </div>
+        <!-- More places here -->
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
