@@ -1,3 +1,6 @@
+import csvjson.json as sample;
+import csvjson bdata.json as largeSample;
+
 function loadCards(csvData) {
     // this will parse CSV Data
     Papa.parse(csvData, {
