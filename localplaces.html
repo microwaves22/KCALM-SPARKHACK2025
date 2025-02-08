@@ -5,46 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Places</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/localPlaces.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- code for the navigation bar -->
-    <nav>
-        <img src="assets/KCalm-logo.png" alt="KCalm" class="KCalm-logo-icon">
-        <div class="nav-links">
-            <a href="homepage.html">
-                <img src="assets/home-icon.png" alt="Home" class="nav-icon">
-            </a>
-            <a href="filterpage.html">Search for Locals</a>
-            <a href="listspage.html">Lists</a>
-            <a href="aboutuspage.html">About Us</a>
-            <a href="accountpage.html">Account</a>
-        </div>
-    </nav> 
+    <!-- Load navbar.html -->
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+    <div id="navbar-container"></div>
 
     <main>
         <h1>Explore Local Places</h1>
-        <div class="places-container">
-            <!-- <div class="card">
-                <img src="assets/home-icon.png" alt="Place 1">
-                <div class="card-content">
-                    <h2>Place Name</h2>
-                    <p>Location: City, State</p>
-                    <p>Category: Restaurant</p>
-                    <button>View Details</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/home-icon.png" alt="Place 2">
-                <div class="card-content">
-                    <h2>Another Place</h2>
-                    <p>Location: City, State</p>
-                    <p>Category: Cafe</p>
-                    <button>View Details</button>
-                </div>
-            </div> -->
-            <!-- More cards can be added dynamically -->
-        </div>
+        <div class="places-container" id="places-container"></div>
     </main>
+
+    <!-- Load PapaParse and the custom script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="js/cards.js"></script>
+    <script>
+        // Example CSV data for testing
+        const csvData = `ID,Name,Location,Category,Price,Description
+        1,Place 1,City, State,Restaurant,5,Great place to eat!
+        2,Place 2,City, State,Cafe,3,Cozy cafe for coffee and chats`;
+
+        loadCards(csvData);
+    </script>
 </body>
 </html>
