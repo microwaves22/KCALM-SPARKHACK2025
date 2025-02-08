@@ -309,3 +309,31 @@ a:hover {
     padding-right: 40px; 
 }
 
+/* styling for local places */
+#local-places-container {
+    text-align: center;
+    position: relative;
+}
+
+#icons-container {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.icon {
+    width: 40px;
+    cursor: pointer;
+}
+
+#place-photo {
+    width: 50%;
+    height: auto;
+    max-height: 400px;
+    display: block; 
+    margin: 0 auto; 
+}
