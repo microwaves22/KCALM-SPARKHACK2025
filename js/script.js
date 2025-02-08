@@ -58,7 +58,7 @@ function submitLogin() {
     if (storedUser && storedUser.email === username && storedUser.password === password) {
         // Successful login
         alert("Login Successful!");
-        window.location.href = "filterpage.html"; // Redirect to local places filters page
+        window.location.href = "localplaces.html"; // Redirect to local places filters page
     } else {
         alert("Invalid username or password.");
     }
@@ -66,7 +66,7 @@ function submitLogin() {
 
 // function to continue as a guest
 function continueAsGuest() {
-    window.location.href = "filterpage.html";
+    window.location.href = "localplaces.html";
 }
 
 window.onload = function() {
@@ -76,7 +76,7 @@ window.onload = function() {
     if (storedUser) {
         // welcomes back user only in console tho
         console.log("Welcome back, " + storedUser.name);
-        window.location.href = "filterpage.html"; // Redirect to filterpage
+        window.location.href = "localplaces.html"; // Redirect to localplaces
     }
 };
 
