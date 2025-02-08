@@ -34,11 +34,6 @@ document.getElementById("heart-icon").addEventListener("click", () => {
     }
 });
 
-// Handle map icon click (open map)
-document.getElementById("map-icon").addEventListener("click", () => {
-    let place = places[currentIndex];
-    window.open(`https://www.google.com/maps?q=${place.LATITUDE},${place.LONGITUDE}`, "_blank");
-});
 
 // Handle bookmark icon click (add to bookmarks)
 document.getElementById("bookmark-icon").addEventListener("click", () => {
