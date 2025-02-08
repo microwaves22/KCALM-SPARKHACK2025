@@ -6,6 +6,7 @@ Locally KCALM is a website designed to support and promote local businesses by g
 ### Key Features
 - **Search for Locals Page**: Users can explore and locate various establishments near their location.
 - **Save Lists Page**: Users can organize businesses into custom categories for easy access and reference.
+- **Account Page**: Users are welcomed and a dropdown feature allows for user to log out. 
 - **Extra Functionality**: Features like the heart and bookmark allow users to favorite specific establishments and save them for later.
 
 ---
@@ -32,7 +33,7 @@ To use the platform:
 
 ##Built With
 - Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express.js
+- Backend: JavaScript
 - Databases: Sample Database (10 entries), B Database (53,000 entries)
 
 ##How to Collaborate 
