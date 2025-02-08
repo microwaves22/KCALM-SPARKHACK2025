@@ -33,7 +33,7 @@ To use the platform:
 
 ##Built With
 - Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express.js
+- Backend: JavaScript
 - Databases: Sample Database (10 entries), B Database (53,000 entries)
 
 ##How to Collaborate 
