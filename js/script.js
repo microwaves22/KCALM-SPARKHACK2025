@@ -68,3 +68,14 @@ function submitLogin() {
 function continueAsGuest() {
     window.location.href = "filterpage.html";
 }
+
+window.onload = function() {
+    // Check if the user is already stored in localStorage
+    var storedUser = JSON.parse(localStorage.getItem("user"));
+    
+    if (storedUser) {
+        // welcomes back user only in console tho
+        console.log("Welcome back, " + storedUser.name);
+        window.location.href = "filterpage.html"; // Redirect to filterpage
+    }
+};
