@@ -4,36 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Places</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/localPlaces.css">
 </head>
 <body>
-    <div class="filter-container">
-        <label for="filter">Filter by Type:</label>
-        <select id="filter" name="filter">
-            <option value="all">All</option>
-            <option value="restaurant">Restaurant</option>
-            <option value="park">Park</option>
-            <option value="shop">Shop</option>
-            <option value="shop">Cosmetics</option>
-        </select>
-    </div>
-
-    <div class="local-places-container">
-        <div class="place restaurant">
-            <img src="path_to_image" alt="Place Image" class="place-image">
-            <h3 class="place-name">Restaurant Name</h3>
-            <p class="place-location">Location</p>
-            <p class="place-description">Description of the place.</p>
+    <!-- code for the navigation bar -->
+    <nav>
+        <img src="assets/KCalm-logo.png" alt="KCalm" class="KCalm-logo-icon">
+        <div class="nav-links">
+            <a href="homepage.html">
+                <img src="assets/home-icon.png" alt="Home" class="nav-icon">
+            </a>
+            <a href="filterpage.html">Search for Locals</a>
+            <a href="listspage.html">Lists</a>
+            <a href="aboutuspage.html">About Us</a>
+            <a href="accountpage.html">Account</a>
         </div>
-        <div class="place park">
-            <img src="path_to_image" alt="Place Image" class="place-image">
-            <h3 class="place-name">Park Name</h3>
-            <p class="place-location">Location</p>
-            <p class="place-description">Description of the place.</p>
-        </div>
-        <!-- More places here -->
-    </div>
+    </nav> 
 
-    <script src="js/script.js"></script>
+    <main>
+        <h1>Explore Local Places</h1>
+        <div class="places-container">
+            <div class="card">
+                <img src="assets/NOTUSED-KCALM-logo.png" alt="Place 1">
+                <div class="card-content">
+                    <h2>Place Name</h2>
+                    <p>Location: City, State</p>
+                    <p>Category: Restaurant</p>
+                    <button>View Details</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/NOTUSED-KCALM-logo.png" alt="Place 2">
+                <div class="card-content">
+                    <h2>Another Place</h2>
+                    <p>Location: City, State</p>
+                    <p>Category: Cafe</p>
+                    <button>View Details</button>
+                </div>
+            </div>
+            <!-- More cards can be added dynamically -->
+        </div>
+    </main>
 </body>
 </html>

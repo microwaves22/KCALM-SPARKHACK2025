@@ -34,3 +34,7 @@ function submitSignUp() {
         alert("Please fill in all fields.");
     }
 }
+
+function continueAsGuest() {
+    window.location.href = "filterpage.html";
+}
