@@ -1,13 +1,43 @@
-<!-- Accountpage of KCalm -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- title portion to be deleted later -->
-        <title>Home</title>
+        <title>Account Page</title>
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <style>
+            /* Updated CSS to stack the form fields */
+            form {
+                display: flex;
+                flex-direction: column; /* Stack the form fields vertically */
+                width: 300px; /* Optional: Adjust form width */
+                margin: 0 auto; /* Center the form */
+            }
+
+            input[type="text"], input[type="number"] {
+                width: 100%; /* Make the input fields take up the full width of the form */
+                padding: 8px; 
+                margin: 10px 0; /* Add space between inputs */
+                font-size: 14px; 
+                box-sizing: border-box; /* Ensures padding doesn't affect width */
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
     </head>
     <body>
         <!-- Load navbar.html -->
@@ -23,6 +53,60 @@
         <h1>Account Page</h1>
         <h2 id="welcome-message">Loading...</h2>
 
+        <!-- Local Business Form -->
+        <h3>Are you a local business? Add your details!</h3>
+        <form id="business-form">
+            <label for="business-name">Business Name:</label>
+            <input type="text" id="business-name" required>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+            
+            <label for="details">Details:</label>
+            <input type="text" id="details" required>
+            
+            <label for="latitude">Latitude:</label>
+            <input type="number" step="any" id="latitude" required>
+            
+            <label for="longitude">Longitude:</label>
+            <input type="number" step="any" id="longitude" required>
+            
+            <button type="submit">Add Business</button>
+        </form>
+
         <script src="js/script.js"></script>
-    </body> 
+        <script>
+            // Function to handle form submission
+            document.getElementById('business-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form from refreshing the page
+
+                const businessData = {
+                    name: document.getElementById('business-name').value,
+                    address: document.getElementById('address').value,
+                    details: document.getElementById('details').value,
+                    latitude: parseFloat(document.getElementById('latitude').value),
+                    longitude: parseFloat(document.getElementById('longitude').value)
+                };
+
+                // Save business data to localStorage
+                saveBusinessData(businessData);
+            });
+
+            // Function to save the business data to localStorage
+            function saveBusinessData(businessData) {
+                // Get the current places from localStorage or initialize an empty array if no places exist
+                let places = JSON.parse(localStorage.getItem('places')) || [];
+                
+                // Add the new business data to the array
+                places.push(businessData);
+
+                // Save the updated places array back to localStorage
+                localStorage.setItem('places', JSON.stringify(places));
+
+                alert('Business added successfully!');
+                
+                document.getElementById('business-form').reset();
+            }
+        </script>
+    </body>
 </html>

@@ -380,3 +380,48 @@ a:hover {
     background: linear-gradient(135deg, #3a4b88, #5e72a4); 
     transform: translateY(1px); 
 }
+
+form {
+    display: flex;
+    flex-direction: column; 
+    width: 300px; 
+    margin: 0 auto; 
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%; 
+    padding: 8px; 
+    margin: 10px 0; 
+    font-size: 14px; 
+    box-sizing: border-box; 
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #050a30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #456990;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #050a30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #456990;
+}
