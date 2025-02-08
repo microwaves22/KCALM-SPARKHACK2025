@@ -7,19 +7,35 @@ body {
     text-align: center;
 }
 
-/* navigation bar */
-nav {
-    background-color: #E2FDFF; 
-    width: 90%; 
-    max-width: 1800px; 
-    margin: 0 auto; /* Centers the navbar */
-    padding: 20px; /* Adds padding inside */
-    border-radius: 5px; /* Rounds corners */
-    margin-top: 10px;
+/* all things navigation start */
+
+/* container for logo and navbar */
+.header-container {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; /* Spaces out items evenly */
-    height: 45px;
+    margin-top: -10px; 
+}
+
+/* KCalm logo icon */
+.KCalm-logo-icon {
+    height: 100px; /* Adjust height to your preferred size */
+    vertical-align: left;
+}
+
+/* navigation bar */
+nav {
+    background-color: #E2FDFF;
+    width: 90%;
+    max-width: 90%;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    justify-content: flex-start;
+    padding-left: 20px;
+    margin-left: -10px;
+    margin-top: 0px;
 }
 
 /* color of the words */
@@ -36,9 +52,73 @@ nav a {
     vertical-align: middle;
     align-items: center;
 }
+/* all things navigation end */
 
-/* KCalm logo icon */
-.KCalm-logo-icon {
-    height: 200%;
-    vertical-align: left;
+/* all things home page start */
+body {
+    background-color: #456990;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+.content-container {
+    display: flex;
+    margin-top: -10px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-box {
+    background-color: #ffffff;
+    width: 45%;
+    height: 400px; 
+    overflow-y: scroll; /* Makes it scrollable */
+    padding: 20px;
+}
+
+.right-box {
+    width: 45%;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #456990;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #355f73;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: #456990;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* all things homepage end */

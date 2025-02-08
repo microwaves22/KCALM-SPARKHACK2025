@@ -1,20 +1,64 @@
 <!-- Homepage of KCalm -->
- <!DOCTYPE html>
- <html lang = "en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset = "UTF-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- title portion to be deleted later -->
         <title>Home</title>
         <link rel="stylesheet" href="css/styles.css">
     </head>
- 
-
     <body>
-        <div id = "nav-placeholder"></div>
+        <!-- code for the navigation bar -->
+        <div class="header-container">
+            <img src="assets/KCalm-logo.png" alt="KCalm" class="KCalm-logo-icon">
 
-        <h1>TESTING! THIS WORKS</h1>
+            <nav>
+                <!-- when user clicks on homepage image, user will be brought to homepage -->
+                <a href="homepage.html">
+                    <img src="assets/home.png" alt="Home" class="nav-icon">
+                </a>
+                <a href="filterpage.html">Search for Locals</a>
+                <a href="accountpage.html">Account</a>
+                <a href="aboutuspage.html">About Us</a>
+            </nav>
+        </div>
 
+        <div class="content-container">
+            <!-- Left box for future content (scrollable) -->
+            <div class="left-box">
+                <p>Future content goes here!</p>
+                <!-- For the local places-->
+            </div>
+        
+            <!-- Login/Sign-up form -->
+            <div class="right-box">
+                <div class="form-container">
+                    <!-- Login Form -->
+                    <div id="login-form">
+                        <h2>Login</h2>
+                        <form>
+                            <input type="text" placeholder="Username" required><br>
+                            <input type="password" placeholder="Password" required><br>
+                            <button type="submit">Login</button>
+                        </form>
+                        <p>New user? <a href="javascript:void(0)" onclick="toggleForm()">Sign up here</a></p>
+                    </div>
+        
+                    <!-- Sign Up Form -->
+                    <div id="signup-form" style="display: none;">
+                        <h2>Sign Up</h2>
+                        <form id="signup-form">
+                            <input type="text" id="name" placeholder="Full Name" required><br>
+                            <input type="email" id="email" placeholder="Email" required><br>
+                            <input type="password" id="password" placeholder="Password" required><br>
+                            <button type="button" onclick="submitSignUp()">Sign Up</button>
+                        </form>
+                        <p>Already a user? <a href="javascript:void(0)" onclick="toggleForm()">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>  
         <script src="js/script.js"></script>
-    </body>
- </html>
+    </body> 
+</html>
