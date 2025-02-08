@@ -1,2 +1,2 @@
-const data = require('./sampleData.json');
+const data = require('./bData.json');
 console.log(data);

@@ -15,13 +15,19 @@ function displayPlace(index) {
     document.getElementById("place-type").textContent = `Type: ${place.TYPE}`;
 }
 
-// Handle the "Next" button click
-document.getElementById("next-button").addEventListener("click", () => {
-    if (places.length > 0) {
-        currentIndex = (currentIndex + 1) % places.length; // Cycle through places
-        displayPlace(currentIndex);
+function increment() {
+    if (currentIndex < places.length - 1) {
+        currentIndex++;
+        displayPlace(currentIndex);  // Update the place when incremented
     }
-});
+}
+
+function decrement() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        displayPlace(currentIndex);  // Update the place when decremented
+    }
+}
 
 // Handle heart icon click (add to favorites)
 document.getElementById("heart-icon").addEventListener("click", () => {
@@ -29,11 +35,12 @@ document.getElementById("heart-icon").addEventListener("click", () => {
     if (!favorites.includes(place)) {
         favorites.push(place);
         alert(`${place.NAME} added to favorites!`);
+        // Save favorites to localStorage
+        localStorage.setItem('favorites', JSON.stringify(favorites));
     } else {
         alert(`${place.NAME} is already in favorites.`);
     }
 });
-
 
 // Handle bookmark icon click (add to bookmarks)
 document.getElementById("bookmark-icon").addEventListener("click", () => {
@@ -41,25 +48,27 @@ document.getElementById("bookmark-icon").addEventListener("click", () => {
     if (!bookmarks.includes(place)) {
         bookmarks.push(place);
         alert(`${place.NAME} added to bookmarks!`);
+        // Save bookmarks to localStorage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     } else {
         alert(`${place.NAME} is already in bookmarks.`);
     }
 });
 
 // Fetch places from the JSON file
-fetch("sampleData.json")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Failed to load JSON file");
-        }
-        return response.json();
-    })
+fetch('js/BData.json')
+    .then(response => response.json())
     .then(data => {
-        if (data.length === 0) {
-            console.warn("No places found in JSON.");
-            return;
-        }
-        places = data;
-        displayPlace(currentIndex);
+        places = data;  // Store the fetched places in the array
+
+        displayPlace(currentIndex);  // Display the first place initially
     })
-    .catch(error => console.error("Error fetching places:", error));
+    .catch(error => console.log('Error loading data: ', error));
+
+// Next button - Increment place index
+const nextButton = document.getElementById('next-button');
+nextButton.addEventListener('click', increment);
+
+// Back button - Decrement place index
+const backButton = document.getElementById('back-button');
+backButton.addEventListener('click', decrement);

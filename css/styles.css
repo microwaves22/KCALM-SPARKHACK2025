@@ -278,7 +278,7 @@ a:hover {
 
 .about-us-page .img {
   border-radius: 5px;
-  background-color: #65c17c;
+  background-color: #19682d;
   width: 100%;
   font-size: 15px;
   margin-left: 10px;
@@ -289,7 +289,7 @@ a:hover {
 
 .about-us-page .text {
     border-radius: 5px;
-    background-color: #65c17c;
+    background-color: #19682d;
     width: 40%;
     margin: 20px;
     line-height: 30px; 
@@ -302,32 +302,51 @@ a:hover {
 
 
 /*all things about account page */
-
-.account-page .account-page-right {
-    font-size: 45px;
-    text-align: right;
-    padding-right: 40px; 
+.account-page .account-page-left {
+    font-size: 30px;
+    text-align: left;
+    padding-left: 20px;
+    background-color: red; 
 }
 
 /* styling for local places */
 #local-places-container {
-    text-align: center;
-    position: relative;
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    width: 90%; 
+    max-width: 500px; 
+    min-height: 300px; 
+    background-color: #f0f0f0; 
+    border: 2px solid #ccc;
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    margin-left: 25%;
+    margin-top: 10px;
+    position: relative; 
 }
 
+#local-places-container > * {
+    margin: 10px 0; 
+}
+
+/* Icon container aligned to the bottom right of the local places container */
 #icons-container {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    bottom: 10px; 
+    right: 10px; 
     display: flex;
-    justify-content: space-between;
     padding: 0 20px;
 }
 
 .icon {
     width: 40px;
     cursor: pointer;
+    margin-left: 5px; 
 }
 
 #place-photo {
@@ -336,4 +355,28 @@ a:hover {
     max-height: 400px;
     display: block; 
     margin: 0 auto; 
+}
+
+.buttons-bn {
+    background: linear-gradient(135deg, #6e7fcd, #a9b3eb); 
+    color: white; 
+    font-size: 16px; 
+    font-weight: bold;
+    padding: 10px 20px; 
+    border: 2px solid transparent; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-bottom: 10px;
+}
+
+.buttons-bn:hover {
+    background: linear-gradient(135deg, #4b5fa6, #7c8cd5); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-3px); 
+}
+
+.buttons-bn:active {
+    background: linear-gradient(135deg, #3a4b88, #5e72a4); 
+    transform: translateY(1px); 
 }
