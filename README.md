@@ -6,6 +6,7 @@ Locally KCALM is a website designed to support and promote local businesses by g
 ### Key Features
 - **Search for Locals Page**: Users can explore and locate various establishments near their location.
 - **Save Lists Page**: Users can organize businesses into custom categories for easy access and reference.
+- **Account**: When the user clicks on the "Account" button, a dropdown menu appears, displaying options such as "Logout." This provides a simple and intuitive way for users to manage their account settings.
 - **Extra Functionality**: Features like the heart and bookmark allow users to favorite specific establishments and save them for later.
 
 ---
