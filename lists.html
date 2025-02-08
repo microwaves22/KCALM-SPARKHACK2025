@@ -1,10 +1,8 @@
-<!-- saved list page of KCalm -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- title portion to be deleted later -->
         <title>Saved Lists</title>
         <link rel="stylesheet" href="css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -19,7 +17,85 @@
                 });
         </script>
 
-        <div id="navbar-container"></div>  
+        <div id="navbar-container"></div> 
+
+        <div class="saved-lists-container">
+            <h2>Saved Lists</h2>
+            <div id="saved-lists"></div>
+
+            <!-- Form to create a new list -->
+            <div class="new-list-form">
+                <input type="text" id="list-name" placeholder="Enter list name" />
+                <button id="create-list-btn">Create New List</button>
+            </div>
+        </div>
+
         <script src="js/script.js"></script>
-    </body> 
+        <script>
+            // Function to display saved lists from localStorage
+            function displaySavedLists() {
+                const savedListsContainer = document.getElementById('saved-lists');
+                savedListsContainer.innerHTML = ""; // Clear previous content
+                
+                const savedLists = JSON.parse(localStorage.getItem('savedLists')) || [];
+                
+                if (savedLists.length === 0) {
+                    savedListsContainer.innerHTML = "<p>No saved lists yet!</p>";
+                } else {
+                    savedLists.forEach(list => {
+                        const listElement = document.createElement('div');
+                        listElement.classList.add('saved-list');
+                        
+                        const listName = document.createElement('h3');
+                        listName.textContent = list.listName;
+                        listElement.appendChild(listName);
+                        
+                        const listItems = document.createElement('ul');
+                        list.places.forEach(place => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = `${place.name} - ${place.location}`;
+                            listItems.appendChild(listItem);
+                        });
+                        listElement.appendChild(listItems);
+                        
+                        savedListsContainer.appendChild(listElement);
+                    });
+                }
+            }
+
+            // Function to create a new list
+            function createNewList() {
+                const listName = document.getElementById('list-name').value.trim();
+
+                if (listName === "") {
+                    alert("Please enter a list name.");
+                    return;
+                }
+
+                const savedLists = JSON.parse(localStorage.getItem('savedLists')) || [];
+                
+                // Check if the list name already exists
+                if (savedLists.some(list => list.listName === listName)) {
+                    alert("A list with this name already exists.");
+                    return;
+                }
+
+                const newList = {
+                    listName: listName,
+                    places: [] // Initialize with an empty list of places
+                };
+
+                savedLists.push(newList);
+                localStorage.setItem('savedLists', JSON.stringify(savedLists));
+                displaySavedLists();  // Re-render saved lists after adding the new list
+                document.getElementById('list-name').value = ""; // Clear the input field
+            }
+
+            // Event listener for creating a new list
+            document.getElementById('create-list-btn').addEventListener('click', createNewList);
+
+            // Call the function to display the lists when the page loads
+            document.addEventListener('DOMContentLoaded', displaySavedLists);
+        </script>
+    </body>
 </html>

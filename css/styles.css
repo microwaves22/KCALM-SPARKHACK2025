@@ -298,3 +298,15 @@ a:hover {
     padding: 20px; 
   }
 
+/*end all things about us page */
+
+
+/*all things about account page */
+
+.account-page .account-page-left {
+    font-size: 30px;
+    text-align: left;
+    padding-left: 20px;
+    background-color: red; 
+}
+

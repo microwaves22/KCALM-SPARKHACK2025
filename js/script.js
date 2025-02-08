@@ -94,4 +94,3 @@ function logOut() {
     // redirect to the homepage 
     window.location.href = "homepage.html";
 }
-
