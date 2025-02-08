@@ -10,19 +10,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- code for the navigation bar -->
-        <nav>
-            <img src="assets/KCalm-logo.png" alt="KCalm" class="KCalm-logo-icon">
-            <div class="nav-links">
-                <a href="homepage.html">
-                    <img src="assets/home-icon.png" alt="Home" class="nav-icon">
-                </a>
-                <a href="filterpage.html">Search for Locals</a>
-                <a href="listspage.html">Lists</a>
-                <a href="aboutuspage.html">About Us</a>
-                <a href="accountpage.html">Account</a>
-            </div>
-        </nav>  
+        <!-- Load navbar.html -->
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                });
+        </script>
+
+        <div id="navbar-container"></div>
         <!--Header-->
         
         <div class = "about-us-img">

@@ -297,4 +297,58 @@ a:hover {
     margin-bottom: 20px; 
 }
 
+/* saved lists page start */
+.saved-lists-container {
+    padding: 20px;
+    background: linear-gradient(to right, #456990, #347483);
+}
 
+.saved-list {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.saved-list h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.saved-list ul {
+    padding-left: 20px;
+}
+
+.saved-list li {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.new-list-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#list-name {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin-right: 10px;
+}
+
+#create-list-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#create-list-btn:hover {
+    background-color: #0056b3;
+}
+/* saved lists end */
