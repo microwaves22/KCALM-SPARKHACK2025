@@ -79,3 +79,19 @@ window.onload = function() {
         window.location.href = "filterpage.html"; // Redirect to filterpage
     }
 };
+
+// toggles the visibility of the Account dropdown menu
+function toggleAccountDropdown() {
+    var dropdown = document.getElementById("account-dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+// Log out the user (remove from localStorage)
+function logOut() {
+    // Clear the user data from localStorage
+    localStorage.removeItem("user");
+
+    // redirect to the homepage 
+    window.location.href = "homepage.html";
+}
+
