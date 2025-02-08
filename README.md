@@ -1,2 +1,0 @@
-# KCALM-SPARKHACK2025
-SparkHacks 2025
