@@ -13,37 +13,33 @@ body {
 .header-container {
     display: flex;
     align-items: center;
-    margin-top: -10px; 
+    margin-top: 0; 
 }
 
 /* KCalm logo icon */
 .KCalm-logo-icon {
-    height: 100px;
+    height: 40px;
     vertical-align: left;
 }
 
 /* navigation bar */
 nav {
-    background-color: #E2FDFF;
-    width: 90%;
-    max-width: 90%;
-    padding: 15px;
-    border-radius: 5px;
+    background-color: #050a30;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     align-items: center;
-    height: 35px;
-    justify-content: flex-start;
-    padding-left: 20px;
-    margin-left: -10px;
-    margin-top: 0px;
+    height: 40px;
+    justify-content: space-between;
+    padding-right: 25px;
 }
 
 /* color of the words */
 nav a {
-    color: black;
+    color: white;
     text-decoration: none;
-    margin-right: 15px;
     font-size: 20px;
+    align-items: right;
 }
 
 /* homepage icon */
