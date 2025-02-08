@@ -25,16 +25,46 @@ function submitSignUp() {
         console.log("Email:", email);
         console.log("Password:", password);
 
-        //  use data for further processing or smth.
+        // Store data in localStorage (you can modify this to store it properly)
+        var user = {
+            name: name,
+            email: email,
+            password: password
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+
+        // Inform the user that sign-up was successful
         alert("Sign Up Successful!");
 
-        // Reset the form fields
-        document.getElementById('signup-form').reset();
+        // Reset the form - not working
+        // document.getElementById('signup-form').reset();
+
+        window.location.href = "homepage.html"; // Redirect to local places filters page
     } else {
         alert("Please fill in all fields.");
     }
 }
 
+// function for login submission
+function submitLogin() {
+    // Get the values from the form
+    var username = document.querySelector('#login-form input[type="text"]').value;
+    var password = document.querySelector('#login-form input[type="password"]').value;
+
+    // Retrieve user data from localStorage
+    var storedUser = JSON.parse(localStorage.getItem("user"));
+
+    // Validate login
+    if (storedUser && storedUser.email === username && storedUser.password === password) {
+        // Successful login
+        alert("Login Successful!");
+        window.location.href = "filterpage.html"; // Redirect to local places filters page
+    } else {
+        alert("Invalid username or password.");
+    }
+}
+
+// function to continue as a guest
 function continueAsGuest() {
     window.location.href = "filterpage.html";
 }

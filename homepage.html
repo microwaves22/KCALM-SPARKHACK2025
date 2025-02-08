@@ -30,7 +30,7 @@
                 <!-- Login Form -->
                 <div id="login-form">
                     <h2>Login</h2>
-                    <form>
+                    <form onsubmit="event.preventDefault(); submitLogin();"> <!-- Prevent default form submission -->
                         <input type="text" placeholder="Username" required><br>
                         <input type="password" placeholder="Password" required><br>
                         <button type="submit">Login</button>
@@ -51,8 +51,9 @@
                         <input type="password" id="password" placeholder="Password" required><br>
                         <button type="button" onclick="submitSignUp()">Sign Up</button>
                     </form>
-                    <p><a href="javascript:void(0)" onclick="toggleForm()">Already a user?</a></p>                  
+                    <p><a href="javascript:void(0)" onclick="toggleForm()">Already a user?</a></p>
                 </div>
+
             </div>
         </div> 
 
